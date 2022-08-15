@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import './App.css';
+import NavBar from "./components/NavBar";
+
+import Vehicle from "./components/Vehicle";
 
 function App() {
+    let navigate = useNavigate();
+    // navigate("/vehicles");
+
     return (
         <div className="App">
-        <header className="App-header">
-            <h1>Frontend Project - Header</h1>
-            {/* <img src={logo} className="App-logo" alt="logo" />
-            <p>
-            Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Learn React
-            </a> */}
-        </header>
+            <header className="App-header">
+                <h1>Vehicle Log App</h1>
+            </header>
+
+            <NavBar/>
+
+            <Routes>
+                <Route path="/vehicles" element={<Vehicle/>} ></Route>
+            </Routes>
         </div>
     );
 }
