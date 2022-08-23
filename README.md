@@ -7,7 +7,12 @@ This app is about creating a Vehicle log when the user can create records for 3 
 - Services (any service like regular maintenance or replacing a motor part)
 - Expenses (anything other than fill-ups and services, like a logging a car wash or buying an accessory).
 
-After recording this logs/events the user can keep track of their spending in gas, the average MPG of the vehicle, how much they have spent in services and other expenses or the total amount of money they have spent in the vehicle.
+After recording this logs/events the user can keep track of 
+- spending on gas
+- spending on services
+- spending on other expenses
+- average MPG of the vehicle
+- total amount of money they have spent in the vehicle
 
 To be able to record this events, the user has the ability to insert certain data in several catalogs the app needs to work properly:
 - Vehicles, the core information for the application, the user needs to add data for each vehicle they want to keep logs.
