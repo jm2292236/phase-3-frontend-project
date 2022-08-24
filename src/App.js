@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import './App.css';
 import NavBar from "./components/NavBar";
 
+import Header from "./components/Header";
 import Location from "./components/Location";
 import Service from "./components/Service";
 import Vehicle from "./components/Vehicle";
@@ -13,10 +15,7 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <h1>Vehicle Log App</h1>
-            </header>
-
+            <Header/>
             <NavBar/>
 
             <Routes>
