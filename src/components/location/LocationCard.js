@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function LocationCard({location, onDeleteLocation}) {
+function LocationCard({location, onDeleteLocation}) {
     const {id, name} = location;
 
     function handleDelete(id) {
@@ -8,7 +8,7 @@ export default function LocationCard({location, onDeleteLocation}) {
             method: "DELETE"
         })
         .then((r) => r.json())
-        .then((location) => onDeleteLocation());
+        .then((location) => onDeleteLocation(location.id));
     }
 
     return (
@@ -18,3 +18,5 @@ export default function LocationCard({location, onDeleteLocation}) {
       </li>
       )
 }
+
+export default LocationCard;

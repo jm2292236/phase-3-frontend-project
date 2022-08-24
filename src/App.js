@@ -5,8 +5,8 @@ import './App.css';
 import NavBar from "./components/NavBar";
 
 import Header from "./components/Header";
-import Location from "./components/Location";
-import Service from "./components/Service";
+import Location from "./components/location/Location";
+import Service from "./components/service/Service";
 import Vehicle from "./components/Vehicle";
 
 function App() {

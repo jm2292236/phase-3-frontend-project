@@ -63,23 +63,23 @@ main {
     padding: 0 1rem;
 }
   
-.new-location-form {
+.new-record-form {
     padding: 2rem 1rem;
     margin: 2rem 0;
     background-color: #D48970;
 }
   
-.new-location-form form {
+.new-record-form form {
     display: flex;
     justify-content: center;
 }
   
-.new-location-form input {
+.new-record-form input {
     margin-right: 2rem;
     flex: 1;
 }
   
-.new-location-form button {
+.new-record-form button {
     width: 150px;
 }
   

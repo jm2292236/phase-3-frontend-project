@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import LocationCard from './LocationCard';
 
 import LocationList from './LocationList';
 import NewLocationForm from './NewLocationForm';
 
-export default function Location() {
+function Location() {
     const [locations, setLocations] = useState([]);
 
     useEffect(() => {
@@ -18,27 +17,17 @@ export default function Location() {
         setLocations(updatedLocationsArray);
     }
         
-    function handleDeleteLocation() {
-        const updatedLocationsArray = [...locations];
+    function handleDeleteLocation(deletedLocationId) {
+        const updatedLocationsArray = locations.filter(location => location.id !== deletedLocationId);
         setLocations(updatedLocationsArray);
     }
         
-    const locationsToDisplay =
-        locations.map(location => {
-            return (
-                <ul className="cards">
-                    {<LocationCard key={location.id} location={location} onDeleteLocation={handleDeleteLocation}/>}
-                </ul>
-            )
-        }
-    );
-
     return (
         <div>
-            {console.log("Location", locations)}
             <NewLocationForm onAddLocation={handleAddLocation} />
-            {/* <LocationList locations={locations} /> */}
-            {locationsToDisplay}
+            <LocationList locations={locations} onDeleteLocation={handleDeleteLocation}/>
         </div>
     )
 }
+
+export default Location;

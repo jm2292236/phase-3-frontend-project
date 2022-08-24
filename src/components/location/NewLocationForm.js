@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function NewLocationForm(onAddLocation) {
+function NewLocationForm({onAddLocation}) {
     const [name, setName] = useState("");
   
     function handleSubmit(e) {
@@ -13,11 +13,14 @@ export default function NewLocationForm(onAddLocation) {
             body: JSON.stringify({name: name}),
         })
         .then((r) => r.json())
-        .then((newLocation) => onAddLocation(newLocation));
+        .then((newLocation) => {
+            onAddLocation(newLocation)
+            setName("")
+        });
     }
   
     return (
-        <div className="new-location-form">
+        <div className="new-record-form">
             <h2>New Location</h2>
             <form onSubmit={handleSubmit}>
                 <input
@@ -32,3 +35,5 @@ export default function NewLocationForm(onAddLocation) {
         </div>
     );
   }
+
+  export default NewLocationForm;

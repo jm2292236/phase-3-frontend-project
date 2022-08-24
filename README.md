@@ -5,7 +5,7 @@ This is a simple app that uses a Sinatra API backend to access and persist data 
 This app is about creating a Vehicle log when the user can create records for 3 different kind of car events:
 - Fill-ups
 - Services (any service like regular maintenance or replacing a motor part)
-- Expenses (anything other than fill-ups and services, like a logging a car wash or buying an accessory).
+- Expenses (anything other than fill-ups and services, like a car wash or buying an accessory).
 
 After recording this logs/events the user can keep track of 
 - spending on gas
