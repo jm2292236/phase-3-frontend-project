@@ -31,11 +31,10 @@ function VehicleLogCard({log}) {
             <h4>{log_type === FILL_UP ? `Price: ${price_per_gallon}` : null}</h4>
             <h4>Total cost: ${total_cost}</h4>
             <h4>Notes: {notes}</h4>
-            <h4>Service: {log_type === SERVICE ? service_id : null}</h4>
+            <h4>{log_type === SERVICE ? `Service: ${service_id}` : null}</h4>
             <h4>Location: {location_id}</h4>
 
             {/* <button className="primary" onClick={() => handleDelete(id)}>Delete</button> */}
-            <button className="primary">Delete</button>
       </li>
       )
 }

@@ -5,6 +5,7 @@ function VehicleFilter() {
     const [vehicles, setVehicles] = useState([]);
     const [value, setValue] = useState(1);
     const [vehicleLogs, setVehicleLogs] = useState([]);
+    const [vehicleMpg, setVehicleMpg] = useState(0.0);
 
     useEffect(() => {
         fetch("http://localhost:9292/vehicles")
@@ -16,13 +17,18 @@ function VehicleFilter() {
     }, []);
 
     function handleChange(id) {
-        console.log("Logs for vehicle id = ", id)
         fetch(`http://localhost:9292/vehicle_logs/${id}`)
         .then(response => response.json())
         .then(logs => {
             setVehicleLogs(logs)
         })
         setValue(id)
+
+        fetch(`http://localhost:9292/vehicle_logs/average_mpg/${id}`)
+        .then(response => response.json())
+        .then(value => {
+            setVehicleMpg(value)
+        })
     };
 
     return (
@@ -35,9 +41,8 @@ function VehicleFilter() {
                     </option>
                 ))}
             </select>
-            <p>{value}</p>
+            <p>Average MPG: {vehicleMpg !== null ? parseFloat(vehicleMpg).toFixed(2) : "Undetermined"}</p>
 
-            {console.log("VehicleFilter", vehicleLogs)}
             <VehicleLogList vehicleLogs={vehicleLogs}/>
         </div>
     );
