@@ -37,6 +37,13 @@ export default function NavBar() {
                 Vehicles
             </NavLink>
             
+            <NavLink
+                to="/logs"
+                style={linkStyles}
+            >
+                Logs
+            </NavLink>
+            
         </div>
     )
 }

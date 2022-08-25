@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Location from "./components/location/Location";
 import Service from "./components/service/Service";
-import Vehicle from "./components/Vehicle";
+import Vehicle from "./components/vehicle/Vehicle";
 
 function App() {
     // let navigate = useNavigate();
